@@ -1,8 +1,8 @@
 #!/bin/sh
 
 CERT_DIR="/etc/nginx/ssl"
-KEY_FILE="${CERT_DIR}/localhost.key"
-CRT_FILE="${CERT_DIR}/localhost.crt"
+KEY_FILE="${CERT_DIR}/lasseus.lasse.key"
+CRT_FILE="${CERT_DIR}/lasseus.lasse.crt"
 
 # Check if certificate and key files exist
 if [ ! -f "$KEY_FILE" ] || [ ! -f "$CRT_FILE" ]; then
@@ -15,7 +15,7 @@ if [ ! -f "$KEY_FILE" ] || [ ! -f "$CRT_FILE" ]; then
     openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     -keyout "$KEY_FILE" \
     -out "$CRT_FILE" \
-    -subj "/C=US/ST=State/L=City/O=Local Development/CN=localhost"
+    -subj "/C=US/ST=State/L=City/O=Local Development/CN=lasseus.lasse"
     
     echo "Certificate generation complete."
 fi

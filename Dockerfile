@@ -1,6 +1,7 @@
 FROM nginx:alpine
 
-RUN apk update && apk add --no-cache openssl
+RUN apk update
+RUN apk add --no-cache openssl bash
 
 COPY web /usr/share/nginx/html
 
