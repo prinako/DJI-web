@@ -6,9 +6,9 @@ COPY web /usr/share/nginx/html
 
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
-COPY nginx/entrypoint.sh /docker-entrypoint.sh
-RUN chmod +x /docker-entrypoint.sh
+COPY nginx/entrypoint.sh docker-entrypoint.d/entrypoint.sh
+RUN chmod +x docker-entrypoint.d/entrypoint.sh
 
 EXPOSE 80 443
 
-CMD ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.d/entrypoint.sh"]
